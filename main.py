@@ -1,4 +1,5 @@
 import discord
+imprt os
 
 client = discord.Client()
 
@@ -13,5 +14,5 @@ async def on_message(message):
     
     if message.content.startswith('!mone namaskaram'):
         await message.channel.send('')
-
+client.run(os.getenv('TOKEN'))
         
