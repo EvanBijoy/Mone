@@ -1,7 +1,9 @@
 import discord
-imprt os
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-client = discord.Client()
+client = discord.Client(intents=discord.Intents.all())
 
 @client.event
 async def on_ready():
@@ -13,6 +15,5 @@ async def on_message(message):
         return
     
     if message.content.startswith('!mone namaskaram'):
-        await message.channel.send('')
+        await message.channel.send('Hello')
 client.run(os.getenv('TOKEN'))
-        
